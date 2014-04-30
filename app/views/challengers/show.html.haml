@@ -1,0 +1,33 @@
+= render "layouts/header"
+
+.row
+	.text-center
+		%h1
+			= @challenger.name
+
+
+		.btn-group
+			= link_to "Edit" , edit_challenger_path , method: "get" , :class => "btn btn-warning" , :role => "button" 
+			= link_to "Delete" , challenger_path , method: "delete" , :class => "btn btn-danger" , :role => "button" 
+			= mail_to "#{@challenger.email}" , "Email" , method: "get" , :class => "btn btn-info" , :role => "button" 
+
+		%br
+		%h1 posts
+		= button_to "add new post" , new_post_path, method: "get" , :class => "btn btn-default"
+		%br
+.container
+	%div.container{ :style => "border-left: 1px solid #eee;" }
+	- @posts.each do |p|
+
+
+		%h1
+			=p.title
+		
+		%h3
+			
+			=p.description
+		=link_to "delete this post" , post_path(p) , method: "delete"
+		=link_to "edit this post" , edit_post_path(p) , method: "get"
+		%hr
+
+			

@@ -1,0 +1,10 @@
+= render "layouts/header"
+= @post.title
+%br
+= @post.description
+
+%br
+
+=link_to "delete this post" , post_path , method: "delete"
+%br
+=link_to "edit this post" , edit_post_path , method: "get"

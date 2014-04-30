@@ -1,0 +1,25 @@
+
+
+= render "layouts/header"
+
+.row
+	.text-center
+		%h1 Users
+		= link_to "Add a new User" , new_user_path , method: "get"
+	- @users.each do |u|
+		
+		.col-sm-6.col-md-4.panel.panel-primary.text-center
+
+			%br
+			%h1
+				= link_to "#{u.username}" , user_path(u) , method: "get"  
+				 
+			%br
+			Real Name:
+			= u.name
+			%br
+			
+			Description:
+			= u.description
+			%br
+			%br

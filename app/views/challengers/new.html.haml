@@ -1,0 +1,33 @@
+= render "layouts/header"
+= form_for @new_challenger, url: challengers_path do |f|
+	.container
+		
+		.col-sm-6.col-md-6.col-lg-6
+			%h1 create a challenger
+			= render "challenger", f: f
+		
+		.col-sm-6.col-md-6.col-lg-6
+			%h2 add a challenge!
+			=f.fields_for :challenges do|ff| 
+				title
+				%br
+				= ff.text_field :title
+				%br
+				description
+				%br
+				= ff.text_field :description
+				%br
+				interests
+				%br
+				= ff.text_field :interests
+				%br
+				start date
+				%br
+				= ff.date_field :start_date
+				%br
+				end date
+				%br
+				= ff.date_field :end_date
+				%br
+				
+			= f.submit

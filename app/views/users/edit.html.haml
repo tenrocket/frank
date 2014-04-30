@@ -1,0 +1,8 @@
+= render "layouts/header"
+.container.text-center
+	%br
+	= form_for @user, url: user_path do |f|
+		= render "user", f: f
+
+
+	

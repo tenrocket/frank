@@ -1,0 +1,21 @@
+= render "layouts/header"
+.row
+	.text-center
+		%h1 Challengers
+		= link_to "Add a new Challenger" , new_challenger_path , method: "get"
+- @challengers.each do |c|
+	.col-sm-6.col-md-4.panel.panel-primary.text-center
+		%h1
+			= link_to "#{c.username}" , challenger_path(c) , method: "get"  
+		%br
+		Real Name:
+		= c.name
+		%br
+		Email:
+		= c.email
+		%br
+		Interests:
+		= c.interests
+		%br
+
+

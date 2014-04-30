@@ -1,0 +1,11 @@
+= render "layouts/header"
+%h1 Challenge
+= @challenge.title
+
+
+=link_to "delete this challenge" , challenge_path , method: "delete"
+=link_to "edit this challenge" , edit_challenge_path , method: "get"
+
+
+%h2 Challenger
+= @challenge.challenger.name

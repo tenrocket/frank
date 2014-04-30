@@ -1,0 +1,4 @@
+= render "layouts/header"
+= form_for @challenger, url: challenger_path do |f|
+	= render "challenger", f: f
+	= f.submit

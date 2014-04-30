@@ -1,0 +1,31 @@
+= render "layouts/header"
+.row
+	.text-center
+		%h1 Challengers
+		= link_to "Add a new Challenge" , new_challenge_path , method: "get"
+- @challenges.each do |c|
+	.col-sm-6.col-md-4.panel.panel-primary.text-center
+		%h1
+			= link_to "#{c.title}" , challenge_path(c) , method: "get" 
+		%br
+		description:
+		= c.description
+		%br
+		start date:
+		= formatted_date(c.start_date)
+		%br
+		end date:
+		= formatted_date(c.end_date)
+		%br
+		interests:
+		= c.interests
+		%br
+		challenger
+		- if c.challenger
+			= c.challenger.name
+
+		%br
+		%br
+
+
+

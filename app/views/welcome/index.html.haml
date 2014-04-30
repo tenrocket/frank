@@ -1,0 +1,17 @@
+= render "layouts/header"
+
+.container
+	%h1
+		Todays new users
+	%br 
+	- @todays_users.each do |tu|
+		=tu.username
+		%br
+
+.container
+	%h1
+		Challenges ending soon
+	%br
+	- @challenge.each do |c|
+		=link_to "#{c.title}" , challenge_path(c) , method: "get"
+		%br

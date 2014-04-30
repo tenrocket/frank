@@ -1,0 +1,15 @@
+= render "layouts/header"
+%div.container{ :style => "border-left: 1px solid #eee;" }
+	- @posts.each do |p|
+	
+	
+		%h1
+			=p.title
+		
+		%h3
+			
+			=p.description
+		=link_to "delete this post" , post_path(p) , method: "delete"
+		=link_to "edit this post" , edit_post_path(p) , method: "get"
+		%hr
+		

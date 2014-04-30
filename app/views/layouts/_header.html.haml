@@ -1,0 +1,9 @@
+.nav-bar.navbar-default.text-center.navbar-static-top
+	%h1 
+		= link_to "Frank" , root_path , method: "get" 
+	%br
+	.btn-group
+		= link_to "User" , users_path , method: "get" , :class => "btn btn-default" , :role => "button" 
+		= link_to "Challengers" , challengers_path , method: "get" , :class => "btn btn-default" , :role => "button" 
+		= link_to "Challenges" , challenges_path , method: "get" , :class => "btn btn-default" , :role => "button"
+		= link_to "Post" , posts_path , method: "get" , :class => "btn btn-default" , :role => "button"  
